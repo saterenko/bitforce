@@ -3,7 +3,7 @@
 
 #include "bitforce_core.h"
 
-static bitforce_filter_t *
+static inline bitforce_filter_t *
 bitforce_filter_new(bitforce_t *ctx, enum bitforce_filter_type_e type)
 {
     if (ctx->filters_count + 1 >= ctx->filter_size) {
@@ -37,7 +37,7 @@ bitforce_filter_set_bool(bitforce_filter_t *filter, int index, int *value, void 
     return 0;
 }
 
-static int
+static inline int
 bitforce_filter_set(bitforce_filter_t *filter, int index, void *value, int value_size, void *ptr)
 {
     switch (filter->type) {

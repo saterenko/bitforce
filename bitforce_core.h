@@ -5,6 +5,7 @@
 
 #define BITFORCE_CACHE_LINE_SIZE 64
 
+#define bitforce_align(_p, _s) ((_p) + (_s - 1)) & ~(_s - 1)
 #define bitforce_align_ptr(_p, _s) (uintptr_t *) (((uintptr_t) (_p) + ((uintptr_t) _s - 1)) & ~((uintptr_t) _s - 1))
 
 enum bitforce_filter_type_e
